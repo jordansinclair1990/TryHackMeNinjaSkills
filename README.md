@@ -1,6 +1,7 @@
 Ninja Skills Writeup:
 	
 I SSH'd into the machine using the following command:
+
 	ssh new-user@{MACHINE_IP}; 
 	(password: new-user)
 	
@@ -23,7 +24,9 @@ Answer the questions about the following files:
 
 The aim is to answer the questions as efficiently as possible.
 	
-So the first thing I did was find exactly where all these files were. I copied the above list of filenames and saved them to a file called: 'filelist.txt'
+So the first thing I did was find exactly where all these files were. I copied the above list of filenames and saved them to a file called: 
+
+	'filelist.txt'
 
 I then created a shell script to find the file locations, and then list those locations into a file called: 'filelocations.txt' Here is the code below:
 	
@@ -53,26 +56,31 @@ Now that the set-up has been done, let's get to these questions:
 Question #1: Which of the above files are owned by the best-group group(enter the answer separated by spaces in alphabetical order)
 
 For this one, I created the following script:
+
 		{findgroupscode.png}
 	
-This script scans through the file locations, and performs the 'scan' command on each of the files. Then, for each of the files, it outputs the following: "filename= {FILE NAME}, groupname= {GROUP NAME}"
+This script scans through the file locations, and performs the 'scan' command on each of the files. Then, for each of the files, it outputs the following:
+
+	"filename= {FILE NAME}, groupname= {GROUP NAME}"
 	
 Here is the resultant output:
+		
 		{findgroupsresults}
 		
 After looking at the results, we see the following files in the "best-group" group:
 		
 		D8B3, v2Vb
 		
-Q
-uestion #2: Which of these files contain an IP address?
+Question #2: Which of these files contain an IP address?
 
 For this question, I banged together a (admitidly ugly) script:
+
 	{ipfindcode}
 	
 Basically, the script cycles through the file locations that we determined before, and for each of the files, it greps for the contained regex pattern that looks for IP addresses. After that, it echos the filename.
 
 The script returned the following results:
+
 	/etc/8V2L
 	/mnt/c4ZX
 	/mnt/D8B3
@@ -93,15 +101,17 @@ Question #3:
 Which file has the SHA1 hash of 9d54da7584015647ba052173b84d45e8007eba94
 
 For this one, I ran the follwing script:
-cat filelocations.txt | \
-while read FILENAME
 
-do
-sha1sum "$FILENAME";
+	cat filelocations.txt | \
+	while read FILENAME
 
-done
+	do
+	sha1sum "$FILENAME";
+
+	done
 
 Received the following output:
+
 	0323e62f06b29ddbbe18f30a89cc123ae479a346  /etc/8V2L
 	9d54da7584015647ba052173b84d45e8007eba94  /mnt/c4ZX
 	2c8de970ff0701c8fd6c55db8a5315e5615a9575  /mnt/D8B3
@@ -122,15 +132,16 @@ Question #4: Which file contains 230 lines?
 
 Used the following script:
 
-cat filelocations.txt | \
-while read FILENAME
+	cat filelocations.txt | \
+	while read FILENAME
 
-do
-wc "$FILENAME";
+	do
+	wc "$FILENAME";
 
-done
+	done
 
 Returned the following:
+
 	209   209 13545 /etc/8V2L
 	209   209 13545 /mnt/c4ZX
 	209   209 13545 /mnt/D8B3
@@ -166,9 +177,11 @@ Got this output:
 The files all have "new-user" as the owner. Except for one: "X1Uy". It has "newer-user" as it's owner.
 
 So I typed the following:
+
 	id -u newer-user
 
 Returned the following:
+
 	502
 	
 Therefore, "X1Uy" is our answer.
@@ -177,6 +190,7 @@ Therefore, "X1Uy" is our answer.
 Question #6: Which file is executable by everyone?
 
 Based on the previous output:
+
 	{listoffileusers.png}
 	
 File "8V2L" is executable by everyone.
