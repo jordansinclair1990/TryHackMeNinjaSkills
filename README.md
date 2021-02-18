@@ -1,4 +1,4 @@
-######Ninja Skills Writeup:
+###### Ninja Skills Writeup:
 	
 I SSH'd into the machine using the following command:
 
@@ -55,7 +55,7 @@ Here are the results:
 Now that the set-up has been done, let's get to these questions:
 	
 
-Question #1: Which of the above files are owned by the best-group group(enter the answer separated by spaces in alphabetical order)
+### Question #1: Which of the above files are owned by the best-group group(enter the answer separated by spaces in alphabetical order)
 
 For this one, I created the following script:
 
@@ -73,7 +73,7 @@ After looking at the results, we see the following files in the "best-group" gro
 		
 		D8B3, v2Vb
 		
-Question #2: Which of these files contain an IP address?
+### Question #2: Which of these files contain an IP address?
 
 For this question, I banged together a (admitidly ugly) script:
 
@@ -98,9 +98,7 @@ The script returned the following results:
 
 So, we see a list interupted by 1 IP address (1.1.1.1). Due to the way the script is written, it attempts a grep on the filename, and then, whether it finds anything or not, it then displays the filename. Since the IP address is found before the "oiMO" file, that is our answer.
 
-Question #3: 
-
-Which file has the SHA1 hash of 9d54da7584015647ba052173b84d45e8007eba94
+### Question #3: Which file has the SHA1 hash of 9d54da7584015647ba052173b84d45e8007eba94
 
 For this one, I ran the follwing script:
 
@@ -130,7 +128,7 @@ Therefore, c4ZX is our answer.
 
 
 
-Question #4: Which file contains 230 lines?
+### Question #4: Which file contains 230 lines?
 
 Used the following script:
 
@@ -158,9 +156,7 @@ Returned the following:
 
 According to the output, all the files here have exactly 209 lines. I then noticed that one of the files on the original list was not found in my original script: "bny0". So, by elimination, I inferred that it was the correct file.
 
-Question #5: 
-
-Which file's owner has an ID of 502?
+### Question #5: Which file's owner has an ID of 502?
 
 Ran the following script:
 
@@ -189,7 +185,7 @@ Returned the following:
 Therefore, "X1Uy" is our answer.
 
 
-Question #6: Which file is executable by everyone?
+### Question #6: Which file is executable by everyone?
 
 Based on the previous output:
 
