@@ -1,4 +1,4 @@
-Ninja Skills Writeup:
+######Ninja Skills Writeup:
 	
 I SSH'd into the machine using the following command:
 
