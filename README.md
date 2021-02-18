@@ -59,7 +59,7 @@ Question #1: Which of the above files are owned by the best-group group(enter th
 
 For this one, I created the following script:
 
-		{findgroupscode.png}
+![find-groups-code](./screenshots/findgroupscode.png)
 	
 This script scans through the file locations, and performs the 'scan' command on each of the files. Then, for each of the files, it outputs the following:
 
@@ -67,7 +67,7 @@ This script scans through the file locations, and performs the 'scan' command on
 	
 Here is the resultant output:
 		
-		{findgroupsresults}
+![find-groups-results](./screenshots/findgroupsresults.png)
 		
 After looking at the results, we see the following files in the "best-group" group:
 		
@@ -77,7 +77,7 @@ Question #2: Which of these files contain an IP address?
 
 For this question, I banged together a (admitidly ugly) script:
 
-	{ipfindcode}
+![find-ip-code](./screenshots/ipfindcode.png)
 	
 Basically, the script cycles through the file locations that we determined before, and for each of the files, it greps for the contained regex pattern that looks for IP addresses. After that, it echos the filename.
 
@@ -174,7 +174,7 @@ Ran the following script:
 
 Got this output:
 	
-	{listoffileusers.png}
+![list-of-users](./screenshots/listoffileusers.png)
 	
 The files all have "new-user" as the owner. Except for one: "X1Uy". It has "newer-user" as it's owner.
 
@@ -193,7 +193,7 @@ Question #6: Which file is executable by everyone?
 
 Based on the previous output:
 
-	{listoffileusers.png}
+![list-of-users](./screenshots/listoffileusers.png)
 	
 File "8V2L" is executable by everyone.
 
