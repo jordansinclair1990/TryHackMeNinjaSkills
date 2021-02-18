@@ -5,6 +5,8 @@ I SSH'd into the machine using the following command:
 	ssh new-user@{MACHINE_IP}; 
 	(password: new-user)
 	
+![entry-page](./screenshots/sshlogin.png)
+	
 At the beginning of the ctf, it has the following instructions:
 
 Answer the questions about the following files:
