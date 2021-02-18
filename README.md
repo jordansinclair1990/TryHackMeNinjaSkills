@@ -32,13 +32,13 @@ So the first thing I did was find exactly where all these files were. I copied t
 
 I then created a shell script to find the file locations, and then list those locations into a file called: 'filelocations.txt' Here is the code below:
 	
-	'''shell
+	```shell
 	cat filelist.txt | \
 	while read FILENAME
 	do
 	find / -name "$FILENAME" -type f 2>/dev/null >> filelocations.txt;
 	done
-	'''
+	```
 	
 Here are the results:
 
