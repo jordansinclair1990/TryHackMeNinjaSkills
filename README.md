@@ -104,13 +104,14 @@ So, we see a list interupted by 1 IP address (1.1.1.1). Due to the way the scrip
 
 For this one, I ran the follwing script:
 
-	cat filelocations.txt | \
-	while read FILENAME
-
+```shell
+cat filelocations.txt | \
+while read FILENAME
 	do
 	sha1sum "$FILENAME";
 
-	done
+done
+```
 
 Received the following output:
 
@@ -134,13 +135,15 @@ Therefore, c4ZX is our answer.
 
 Used the following script:
 
-	cat filelocations.txt | \
-	while read FILENAME
+```shell
+cat filelocations.txt | \
+while read FILENAME
 
-	do
-	wc "$FILENAME";
+do
+wc "$FILENAME";
 
-	done
+done
+```
 
 Returned the following:
 
@@ -162,13 +165,15 @@ According to the output, all the files here have exactly 209 lines. I then notic
 
 Ran the following script:
 
-	cat filelocations.txt | \
-	while read FILENAME
+```shell
+cat filelocations.txt | \
+while read FILENAME
 
-	do
-	ls -la "$FILENAME";
+do
+ls -la "$FILENAME";
 
-	done
+done
+```
 
 Got this output:
 	
@@ -178,7 +183,9 @@ The files all have "new-user" as the owner. Except for one: "X1Uy". It has "newe
 
 So I typed the following:
 
-	id -u newer-user
+```shell
+id -u newer-user
+```
 
 Returned the following:
 
